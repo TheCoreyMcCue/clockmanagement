@@ -1,1 +1,16 @@
 <h1>new</h1>
+<div class="container">
+  <%= simple_form_for @blog do |f| %>
+    <%= f.input :title %>
+    <%= f.input :body, as: :text %>
+    <%= f.input :photo, as: :file %>
+    <div class="d-flex">
+      <%= f.submit "submit", class:'btn btn-primary' %>
+      <% if action_name == 'edit' %>
+        <%= link_to(@blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "ml-2") do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
