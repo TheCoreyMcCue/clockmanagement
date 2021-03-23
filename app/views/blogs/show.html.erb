@@ -1,0 +1,8 @@
+<div class="container">
+  <h1><%= @blog.title %>r</h1>
+</div>
+<div class="image-wrapper container">
+    <%= cl_image_tag @blog.photo.key, crop: :fill, height: 300, width: 300, class: "show-pic" %>
+    <h3><%= @blog.body %>r</h3>
+</div>
+
