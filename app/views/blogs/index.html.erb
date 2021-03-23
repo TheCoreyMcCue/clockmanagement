@@ -3,32 +3,30 @@
     <%# left side %>
     <div class="col-sm-12 col-md-8">
       <% @blogs.each do |blog| %>
-        <div class="d-flex border-bottom py-3 align-items-center">
+        <div class="d-flex border-bottom border-dark py-3 align-items-center">
           <%= cl_image_tag blog.photo.key, class:'img-index-card' %>
           <div class="post-details pl-3">
-            <div class="text-gray d-flex">
-              <p class="py-0 m-0 pr-1"><small><strong><%= blog.subject.upcase %></strong></small></p>
-              <p class="p-0 m-0"><small><%= time_ago_in_words(blog.created_at) %> ago</small></p>
+            <div class="upper-title">
+              <p class="py-0 m-0 pr-1"><small class="text-secondary"><strong><%= blog.subject.upcase %> </strong><%= time_ago_in_words(blog.created_at) %> ago</small></p>
             </div>
-            <h5 class="text-danger"><strong><%= blog.title %></strong></h5>
-            <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog) %></p>
+            <h5><strong><%= blog.title %></strong></h5>
+            <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog), class:"text-secondary" %></p>
           </div>
         </div>
       <% end %>
     </div>
     <%# right side %>
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-4 mb-3">
     <div class="sticky-col">
-    <h3><span>RECENT POST</span></h3>
+    <h5 class="border-bottom border-secondary title-recent"><span class="text-secondary">RECENT POST</span></h5>
       <% @latest_blogs.each do |blog| %>
-        <div class="my-3 align-items-center">
+        <div class="my-5 my-sm-3 align-items-center">
           <div class="post-details pl-3">
-            <div class="text-gray d-flex mt-sm-3">
-              <p class="py-0 m-0 pr-1"><small><strong><%= blog.subject.upcase %></strong></small></p>
-              <p class="p-0 m-0"><small><%= time_ago_in_words(blog.created_at) %> ago</small></p>
+            <div class="upper-title">
+             <p class="py-0 m-0 pr-1"><small class="text-secondary"><strong><%= blog.subject.upcase %> </strong><%= time_ago_in_words(blog.created_at) %> ago</small></p>
             </div>
             <h5><strong><%= blog.title %></strong></h5>
-            <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog) %></p>
+            <p class="body-index-card mb-5"><%= truncate(blog.body, length: 80) %><%= link_to 'Read more', blog_path(blog), class:"text-secondary" %></p>
           </div>
         </div>
       <% end %>
