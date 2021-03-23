@@ -1,9 +1,43 @@
 .img-index-card {
-  width: 170px;
+  width: 200px;
   object-fit: contain;
+  @media screen and (max-width: 576px) {
+    width: 150px;
+  }
 }
 
 .text-gray {
   color: #888888;
+  font-size: 13px;
+  display: flex;
+  align-self: flex-start;
+  @media screen and (max-width: 576px) {
+    font-size: 11px;
+  }
 }
 
+.post-details {
+  max-height: 200px;
+  h5 {
+    font-size: 19px;
+    line-height: 21px;
+    @media screen and (max-width: 576px) {
+      font-size: 15px;
+      line-height: 17px;
+    }
+  }
+
+  .body-index-card {
+    font-size: 14px;
+    line-height: 18px;
+    @media screen and (max-width: 576px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}
+
+.sticky-col {
+  position: sticky;
+  top: 0;
+}
