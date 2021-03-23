@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_blog, only: %i[show edit update destroy]
   def index
   @blogs = Blog.all
   end
@@ -19,9 +20,9 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     # @user = current_user
-    # @blog.user = @user
+    @blog.user = current_user
     @blog.save
-    redirect_to chair_path(@blog)
+    redirect_to blog_path(@blog)
     # authorize @blog
   end
 
@@ -37,5 +38,14 @@ class BlogsController < ApplicationController
     redirect_to blogs_url
   end
 
+  private
+
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
+
+  def blog_params
+    params.require(:blog).permit(:title, :body, :photo)
+  end
 
 end
