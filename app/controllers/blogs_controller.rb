@@ -2,7 +2,8 @@ class BlogsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_blog, only: %i[show edit update destroy]
   def index
-  @blogs = Blog.all
+    @blogs = Blog.all
+    @latest_blogs = Blog.order(:created_at).limit(5)
   end
 
   def show
@@ -13,14 +14,12 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def create
     @blog = Blog.new(blog_params)
     @user = current_user
-    @blog.user = @user
+    @blog.user = current_user
     @blog.save
     redirect_to blogs_path
     # authorize @blog
@@ -47,5 +46,4 @@ class BlogsController < ApplicationController
   def blog_params
     params.require(:blog).permit(:title, :body, :subject, :user_id, :photo)
   end
-
 end

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: 'Roboto Condensed', sans-serif;;
+$headers-font: 'Roboto Condensed', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -17,5 +17,5 @@ $headers-font: 'Roboto Condensed', sans-serif;;
 
 p {
   font-family: 'Titillium Web', sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 0.02em;
 }

@@ -1,7 +1,38 @@
-<h1>Index</h1>
-
-<% @blogs.each do |blog| %>
-  <%= blog.title %>
-  <%= blog.body %>
-  <%= cl_image_tag blog.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<div class="p-2 p-lg-5 p-md-3 p-sm-3">
+  <div class="row">
+    <%# left side %>
+    <div class="col-sm-12 col-md-8">
+      <% @blogs.each do |blog| %>
+        <div class="d-flex border-bottom py-3 align-items-center">
+          <%= cl_image_tag blog.photo.key, class:'img-index-card' %>
+          <div class="post-details pl-3">
+            <div class="text-gray d-flex">
+              <p class="py-0 m-0 pr-1"><small><strong><%= blog.subject.upcase %></strong></small></p>
+              <p class="p-0 m-0"><small><%= time_ago_in_words(blog.created_at) %> ago</small></p>
+            </div>
+            <h5><strong><%= blog.title %></strong></h5>
+            <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog) %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%# right side %>
+    <div class="col-sm-12 col-md-4">
+    <div class="sticky-col">
+    <h3><span>RECENT POST</span></h3>
+      <% @latest_blogs.each do |blog| %>
+        <div class="my-3 align-items-center">
+          <div class="post-details pl-3">
+            <div class="text-gray d-flex mt-sm-3">
+              <p class="py-0 m-0 pr-1"><small><strong><%= blog.subject.upcase %></strong></small></p>
+              <p class="p-0 m-0"><small><%= time_ago_in_words(blog.created_at) %> ago</small></p>
+            </div>
+            <h5><strong><%= blog.title %></strong></h5>
+            <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog) %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
