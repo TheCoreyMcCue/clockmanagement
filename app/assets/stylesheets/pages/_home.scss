@@ -28,6 +28,10 @@
   opacity: 0.70;
 }
 
+.video-intro {
+    width:560px;
+    height:315px;
+  }
 
 .header-content h1, p {
   color: #fff;
@@ -51,8 +55,8 @@
 
 @media (max-width: 575px){
   .video-intro {
-    width="560";
-    height="315";
+    width:560px;
+    height:315px;
   }
 
 
