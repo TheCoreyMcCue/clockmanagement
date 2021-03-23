@@ -1,1 +1,52 @@
 // Specific CSS for your home-page
+.home-header {
+  background: #000000F2;
+  height: 600px;
+}
+
+.home-banner-content {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  padding-top: 130px;
+}
+
+.header-content h1 {
+  font-weight: 600;
+  font-size: 50px;
+  font-family: inherit;
+}
+
+.header-content p {
+  font-weight: 4;
+  font-size: 16px;
+  font-family: inherit;
+  opacity: 0.70;
+}
+
+
+.header-content h1, p {
+  color: #fff;
+}
+
+.video-intro {
+  display: flex;
+  align-items: center;
+}
+
+.custom-btn {
+  background: #DE3932;
+  padding: 5px 20px;
+}
+
+.home-banner-content .btn {
+  padding: 10px 20px;
+  background: #DE3932;
+  font-weight: 600;
+}
+
+@media (max-width: 575px){
+  .video-intro {
+    display:none;
+  }
+}

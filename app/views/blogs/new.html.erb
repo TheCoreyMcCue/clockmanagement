@@ -1,1 +1,12 @@
-<h1>new</h1>
+
+<div class="container">
+  <h1>new</h1>
+  <%= simple_form_for @blog do |f| %>
+    <%= f.input :title %>
+    <%= f.input :subject %>
+    <%= f.input :body, as: :text %>
+    <%= f.input :photo, as: :file %>
+    <div class="d-flex">
+      <%= f.submit "submit", class:'btn btn-primary' %>
+  <% end %>
+</div>
