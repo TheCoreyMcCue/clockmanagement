@@ -1,14 +1,18 @@
 // Specific CSS for your home-page
 .home-header {
   background: #000000F2;
-  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .home-banner-content {
   display: flex;
-  justify-content: center;
-  justify-content: space-between;
-  padding-top: 130px;
+  /*justify-content: center;*/
+  /*align-items:center;*/
+  /*justify-content: space-between;*/
+  /*padding-top: 130px;*/
 }
 
 .header-content h1 {
@@ -30,8 +34,8 @@
 }
 
 .video-intro {
-  display: flex;
-  align-items: center;
+ /* display: flex;
+  align-items: center;*/
 }
 
 .custom-btn {
@@ -46,7 +50,7 @@
 }
 
 @media (max-width: 575px){
-  .video-intro {
+  /*.video-intro {
     display:none;
-  }
+  }*/
 }
