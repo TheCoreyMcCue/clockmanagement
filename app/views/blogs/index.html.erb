@@ -1,1 +1,7 @@
 <h1>Index</h1>
+
+<% @blogs.each do |blog| %>
+  <%= blog.title %>
+  <%= blog.body %>
+  <%= cl_image_tag blog.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
