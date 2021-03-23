@@ -19,17 +19,17 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    # @user = current_user
-    @blog.user = current_user
+    @user = current_user
+    @blog.user = @user
     @blog.save
-    redirect_to blog_path(@blog)
+    redirect_to blogs_path
     # authorize @blog
   end
 
   def update
     # authorize(@blog)
     @blog.update(blog_params)
-    redirect_to blog_path(@blog)
+    redirect_to blogs_path(@blog)
   end
 
   def destroy
@@ -45,7 +45,7 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :body, :photo)
+    params.require(:blog).permit(:title, :body, :photo, :user_id)
   end
 
 end
