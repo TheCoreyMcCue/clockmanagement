@@ -1,4 +1,4 @@
-<div class="p-2 p-lg-5 p-md-3 p-sm-3">
+<div class="p-2 p-lg-5 p-md-3 p-sm-3 blog-list">
   <div class="row">
     <%# left side %>
     <div class="col-sm-12 col-md-8">
@@ -10,7 +10,7 @@
               <p class="py-0 m-0 pr-1"><small><strong><%= blog.subject.upcase %></strong></small></p>
               <p class="p-0 m-0"><small><%= time_ago_in_words(blog.created_at) %> ago</small></p>
             </div>
-            <h5><strong><%= blog.title %></strong></h5>
+            <h5 class="text-danger"><strong><%= blog.title %></strong></h5>
             <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog) %></p>
           </div>
         </div>
