@@ -2,10 +2,21 @@
   <div class="container footer-wrapper">
     <div class="copyright">© 2021 Clock Management. All rights reserved.</div>
     <div class="footer-icons d-flex justify-content-center">
-      <i class="fab fa-youtube"></i>
-      <i class="fab fa-spotify"></i>
-      <i class="fab fa-google"></i>
-      <i class="fab fa-itunes"></i>
+      <%= link_to"https://www.youtube.com/channel/UCvyxe3D80SlsfTrz3rJTsAQ" do %>
+        <i class="fab fa-youtube"></i>
+      <% end %>
+      <%= link_to"https://www.spotify.com/pk-en/" do %>
+        <i class="fab fa-spotify"></i>
+      <% end %>
+      <%= link_to"https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9jOTk4MDg0L3BvZGNhc3QvcnNz" do %>
+        <i class="fab fa-google"></i>
+      <% end %>
+      <%= link_to"https://podcasts.apple.com/us/podcast/clock-management/id1472955303?uo=4" do %>
+        <i class="fab fa-itunes"></i>
+      <% end %>
+      <%= link_to new_user_session_path do %>
+        <i class="fas fa-football-ball"></i>
+      <% end %>
     </div>
   </div>
 </footer>
