@@ -2,6 +2,20 @@
   <div class="row">
     <%# left side %>
     <div class="col-sm-12 col-md-8">
+      <%= form_tag blogs_path, class: "py-2 mb-3", method: :get do %>
+           <label for="blogs-input"><small class="text-danger">Looking for something in particular?</small></label>
+        <div class="d-flex">
+          <%= text_field_tag :query,
+            params[:query],
+            id: "blogs-input",
+            class: "form-control search-input",
+            placeholder: "Find article"
+          %>
+          <%= button_tag(type: 'submit', class: "text-danger seach-icon") do %>
+          <i class="fas fa-search"></i>
+          <% end %>
+        </div>
+      <% end %>
 
 
       <% @blogs.each do |blog| %>
@@ -20,8 +34,8 @@
     </div>
     <%# right side %>
     <div class="col-sm-12 col-md-4">
-    <div class="sticky-col">
-    <h4 class="border-index pb-3"><span class="text-light">RECENT POST</span></h4>
+    <div class="sticky-col mt-4">
+    <h4 class="border-index pb-4"><span class="text-light">RECENT POST</span></h4>
       <% @latest_blogs.each do |blog| %>
         <div class="my-3 align-items-center">
           <div class="post-details pl-3">
