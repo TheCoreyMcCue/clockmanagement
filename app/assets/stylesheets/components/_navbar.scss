@@ -5,3 +5,17 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
+
+
+// change style to hamburger menu
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active{
+  outline: none;
+  border: none;
+  box-shadow: none;
+}

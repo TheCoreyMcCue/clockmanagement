@@ -1,0 +1,33 @@
+.wrap-image-text {
+  float: left;
+  @media screen and (max-width: 576px) {
+    float: none;
+  }
+}
+
+.text-wrap {
+  float: none;
+}
+
+.img-show {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  margin-right: 20px;
+  margin-top: 15px;
+  margin-left: 8px;
+
+  @media screen and (max-width: 576px) {
+    width: 95%;
+    height: auto;
+
+  }
+}
+
+.body-show {
+  color: rgba(255, 255, 255, 0.829);
+}
+
+.time-ago-show {
+  color: rgba(255, 255, 255, 0.363);
+}

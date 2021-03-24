@@ -1,22 +1,31 @@
 <div class="p-2 p-lg-5 p-md-3 p-sm-3 blog-list">
   <div class="row">
+
     <%# left side %>
     <div class="col-sm-12 col-md-8">
-      <%= form_tag blogs_path, class: "py-2 mb-3", method: :get do %>
-           <label for="blogs-input"><small class="text-danger">Looking for something in particular?</small></label>
-        <div class="d-flex">
-          <%= text_field_tag :query,
-            params[:query],
-            id: "blogs-input",
-            class: "form-control search-input",
-            placeholder: "Find article"
-          %>
-          <%= button_tag(type: 'submit', class: "text-danger seach-icon") do %>
-          <i class="fas fa-search"></i>
-          <% end %>
-        </div>
-      <% end %>
 
+    <%# search bar  %>
+      <div class="d-flex">
+        <%= form_tag blogs_path, class: "py-2 mb-3 w-100", method: :get do %>
+            <label for="blogs-input"><small class="text-danger">Looking for something in particular?</small></label>
+            <div class="d-flex w-100">
+              <div class="d-flex input-search-box w-100">
+                <%= text_field_tag :query,
+                  params[:query],
+                  id: "blogs-input",
+                  class: "form-control search-input",
+                  placeholder: "Find article"
+                %>
+                <%= button_tag(type: 'submit', class: "text-danger seach-icon") do %>
+                <i class="fas fa-search"></i>
+                <% end %>
+              </div>
+              <div class="btn-box-index d-flex justify-content-center">
+               <%= link_to "Add Article", new_blog_path, remote: true, class: 'btn btn-danger btn-sm' %>
+              </div>
+            </div>
+        <% end %>
+      </div>
 
       <% @blogs.each do |blog| %>
         <div class="d-flex border-index py-3 align-items-center">
@@ -26,24 +35,29 @@
               <p class="py-0 m-0 pr-1"><small><strong><%= blog.subject.upcase %></strong></small></p>
               <p class="p-0 m-0"><small><%= time_ago_in_words(blog.created_at) %> ago</small></p>
             </div>
-            <h5><strong><%= blog.title %></strong></h5>
+            <%= link_to blog_path(blog) do  %>
+              <h5><strong><%= blog.title %></strong></h5>
+            <% end %>
             <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog) %></p>
           </div>
         </div>
       <% end %>
     </div>
+
     <%# right side %>
     <div class="col-sm-12 col-md-4">
     <div class="sticky-col mt-4">
-    <h4 class="border-index pb-4"><span class="text-light">RECENT POST</span></h4>
+    <h4 class="border-index pb-2 pt-3 "><span class="text-light"><small>RECENT POST</small></span></h4>
       <% @latest_blogs.each do |blog| %>
-        <div class="my-3 align-items-center">
+        <div class="my-5 align-items-center">
           <div class="post-details pl-3">
-            <div class="text-gray d-flex mt-sm-3">
+            <div class="text-color-small d-flex mt-sm-3">
               <p class="py-0 m-0 pr-1"><small><strong><%= blog.subject.upcase %></strong></small></p>
               <p class="p-0 m-0"><small><%= time_ago_in_words(blog.created_at) %> ago</small></p>
             </div>
-            <h5><strong><%= blog.title %></strong></h5>
+            <%= link_to blog_path(blog) do  %>
+              <h5><strong><%= blog.title %></strong></h5>
+            <% end %>
             <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog) %></p>
           </div>
         </div>
