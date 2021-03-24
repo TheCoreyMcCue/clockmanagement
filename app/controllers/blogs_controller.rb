@@ -2,8 +2,19 @@ class BlogsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_blog, only: %i[show edit update destroy]
   def index
-    @blogs = Blog.all
-    @latest_blogs = Blog.order(:created_at).limit(5)
+    @latest_blogs = Blog.order(:created_at).reverse_order.limit(5)
+
+    #search bar
+    if params[:query].present?
+      sql_query = " \
+        blogs.title @@ :query \
+        OR blogs.body @@ :query \
+        OR blogs.subject @@ :query \
+      "
+      @blogs = Blog.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @blogs = Blog.all.reverse_order
+    end
   end
 
   def show

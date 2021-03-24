@@ -55,3 +55,27 @@ color: rgba(255, 255, 255, 0.363);;
 .title-recent {
 line-height: 40px;
 }
+
+.seach-icon {
+  background-color: transparent;
+  border: none;
+  margin-left: -3vw;
+  &:focus{
+    outline: none;
+  }
+}
+
+.search-input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  padding: 10px auto;
+  border-bottom: 1px solid $danger;
+}
+
+.search-input:focus, .search-input:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background-color: transparent !important;
+}
