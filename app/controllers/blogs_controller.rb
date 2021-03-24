@@ -1,12 +1,10 @@
 class BlogsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_blog, only: %i[show edit update destroy]
+  before_action :set_latest_blog, only: %i[index show]
   def index
-
     @blogs = policy_scope(Blog).order(created_at: :desc)
-    @latest_blogs = Blog.order(:created_at).reverse_order.limit(5)
-
-    #search bar
+    # search bar
     if params[:query].present?
       sql_query = " \
         blogs.title @@ :query \
@@ -58,6 +56,10 @@ class BlogsController < ApplicationController
 
   def set_blog
     @blog = Blog.find(params[:id])
+  end
+
+  def set_latest_blog
+    @latest_blogs = Blog.order(:created_at).reverse_order.limit(5)
   end
 
   def blog_params
