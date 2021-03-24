@@ -6,7 +6,7 @@ class BlogPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.admin?
+    user && user.admin?
   end
 
   def index?

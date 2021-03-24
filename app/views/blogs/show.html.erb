@@ -7,7 +7,7 @@
 
   <% if policy(@blog).destroy? %>
     <div class="mb-3">
-      <%= link_to(@blog, method: :delete, data: { confirm: 'Are you sure?' }) do %>
+      <%= link_to(@blog, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' }) do %>
       <i class="far fa-trash-alt">
       </i>
       <% end %>
