@@ -1,9 +1,18 @@
 .img-index-card {
   width: 200px;
-  object-fit: contain;
+  max-height: 150px;
+  object-fit: cover;
   @media screen and (max-width: 576px) {
     width: 150px;
   }
+}
+
+.border-index{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.233);
+}
+
+.text-color-small p {
+color: rgba(255, 255, 255, 0.363);;
 }
 
 .upper-title {
@@ -20,7 +29,7 @@
   h5 {
     font-size: 19px;
     line-height: 21px;
-    color: #a80000;
+    color: $pink;
     @media screen and (max-width: 576px) {
       font-size: 15px;
       line-height: 17px;
