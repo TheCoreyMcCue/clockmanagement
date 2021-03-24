@@ -22,7 +22,7 @@ class BlogPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.admin? || user.blogger?
   end
 
   def show?
