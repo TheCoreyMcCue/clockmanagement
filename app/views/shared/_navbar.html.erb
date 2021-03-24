@@ -16,25 +16,25 @@
           <a class="nav-link active text-danger" aria-current="page" href="/pages/podcast">PODCAST</a>
         </li>
         <li class="nav-item">
-          <%= link_to "ARTICLES", blogs_path, class: 'nav-link' %>
+          <%= link_to "ARTICLES", blogs_path, class: 'nav-link text-danger' %>
         </li>
         <li class="nav-item">
           <a class="nav-link text-danger" href="/pages/rankings">RANKINGS</a>
         </li>
         <li class="nav-item">
-          <%= link_to "CREATE ARTICLE", new_blog_path, class: 'nav-link ' %>
+          <%= link_to "CREATE ARTICLE", new_blog_path, class: 'nav-link text-danger' %>
         </li>
         <li class="nav-item">
           <a class="nav-link active text-danger" aria-current="page" href="/pages/plug">PLUG'S INTERVIEWS</a>
         </li>
         <li class="nav-item">
           <% if user_signed_in? %>
-            <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'nav-link' %>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'nav-link text-danger' %>
           <% end %>
         </li>
         <li class="nav-item">
           <% if ! user_signed_in? %>
-            <%= link_to "Login", new_user_session_path, :method => :get, class: 'nav-link' %>
+            <%= link_to "Login", new_user_session_path, :method => :get, class: 'nav-link text-danger' %>
           <% end %>
         </li>
       </ul>
