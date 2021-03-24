@@ -1,0 +1,35 @@
+.login-bg {
+  background-color: $dark;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-wrapper .login-fields {
+  width: 400px;
+  background: $dark;
+  border: 1px solid $danger;
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+}
+
+.form-label {
+  color: #fff;
+}
+
+.login-wrapper .login-fields:focus {
+  outline: none;
+}
+
+.login-shared-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-shared-links a:hover {
+  color: $danger;
+  text-decoration: none;
+}

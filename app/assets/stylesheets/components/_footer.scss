@@ -1,6 +1,5 @@
 footer {
   background: $dark;
-  /*background: white;*/
   height: 120px;
   width: 100%;
   padding-top: 30px;
@@ -10,10 +9,9 @@ footer {
   color: #fff;
   font-size: 12px;
   font-family: inherit;
-  /*width:60%;*/
 }
 
-.footer-icons .fab {
+.footer-icons .fab, .fa-football-ball {
   color: $pink;
   font-size: 25px;
 }
@@ -23,7 +21,7 @@ footer {
   font-size: 25px;
 }
 
-.fab {
+.fab, .fa-football-ball {
   margin: 5px;
 }
 
@@ -31,8 +29,6 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-
-
 
 @media (max-width: 575px){
   .footer-wrapper {

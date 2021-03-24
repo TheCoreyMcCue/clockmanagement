@@ -32,11 +32,11 @@
             <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'nav-link text-danger' %>
           <% end %>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <% if ! user_signed_in? %>
             <%= link_to "Login", new_user_session_path, :method => :get, class: 'nav-link text-danger' %>
           <% end %>
-        </li>
+        </li> -->
       </ul>
     </div>
     </div>
