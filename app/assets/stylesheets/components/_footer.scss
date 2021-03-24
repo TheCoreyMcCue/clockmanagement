@@ -1,5 +1,5 @@
 footer {
-  background: #000000F2;
+  background: $dark;
   /*background: white;*/
   height: 120px;
   width: 100%;
@@ -8,13 +8,13 @@ footer {
 
 .copyright {
   color: #fff;
-  font-size:14px;
+  font-size: 12px;
   font-family: inherit;
   /*width:60%;*/
 }
 
 .footer-icons .fab {
-  color: #DE3932;
+  color: $pink;
   font-size: 25px;
 }
 
