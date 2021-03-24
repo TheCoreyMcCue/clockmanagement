@@ -5,6 +5,10 @@ class BlogPolicy < ApplicationPolicy
     end
   end
 
+  def destroy?
+    user.admin?
+  end
+
   def index?
     true
   end
