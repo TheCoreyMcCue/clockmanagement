@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :plug, :podcast, :rankings]
+  skip_before_action :authenticate_user!, only: [:home, :plug, :podcast]
 
   def home
   end
@@ -16,7 +16,7 @@ class PagesController < ApplicationController
     render template: "pages/about"
   end
 
-  def rankings
-    render template: "pages/rankings"
-  end
+  # def rankings
+  #   render template: "pages/rankings"
+  # end
 end

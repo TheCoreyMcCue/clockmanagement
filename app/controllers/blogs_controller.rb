@@ -24,10 +24,16 @@ class BlogsController < ApplicationController
 
   def new
     @blog = Blog.new
+    respond_to do |format|
+      format.js
+    end
     authorize(@blog)
   end
 
   def edit
+    respond_to do |format|
+      format.js
+    end
     authorize(@blog)
   end
 
@@ -36,14 +42,21 @@ class BlogsController < ApplicationController
     @user = current_user
     @blog.user = @user
     authorize @blog
-    @blog.save
-    redirect_to blogs_path
+    if @blog.save
+      redirect_to blogs_path
+    else
+      render :new
+    end
   end
 
   def update
     authorize(@blog)
     @blog.update(blog_params)
-    redirect_to blogs_path(@blog)
+    if @blog.save
+      redirect_to blogs_path(@blog)
+    else
+      render :edit
+    end
   end
 
   def destroy

@@ -90,3 +90,16 @@ line-height: 40px;
     margin-top: 8px;
   }
 }
+
+
+//style modal
+
+.modal-style {
+  border: 1px solid rgba(87, 87, 87, 0.233);
+  button {
+    color: $body-color;
+  }
+  .modal-header {
+    border-bottom: none !important;
+  }
+}

@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get "pages/plug" => "pages#plug"
   get "pages/podcast" => "pages#podcast"
   get "pages/about" => "pages#about"
-  get "pages/rankings" => "pages#rankings"
-  resources :blogs do
-  end
+
+  # get "pages/rankings" => "pages#rankings"
+  resources :rankings
+  resources :blogs
 end

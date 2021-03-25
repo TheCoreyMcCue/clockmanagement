@@ -1,7 +1,23 @@
 <div class="p-2 p-lg-5 p-md-3 p-sm-3 blog-list">
   <div class="row">
     <div class="col-sm-12 col-md-8 mt-5">
-      <p class="bg-danger text-light d-inline border-rounded px-2 my-2"><small><strong><%= @blog.subject.upcase %></strong></small></p>
+      <div class="d-flex w-100 justify-content-between align-items-center">
+        <p class="bg-danger text-light d-inline border-rounded px-2 my-2"><small><strong><%= @blog.subject.upcase %></strong></small></p>
+
+        <% if user_signed_in? %>
+          <% if current_user.admin %>
+            <div class="d-flex mr-3 edit-delete-article">
+              <%= link_to edit_blog_path(@blog), remote: true do %>
+                <p class="p-0 m-0 text-danger mr-2"><small>Edit</small></p>
+              <% end %>
+              <%= link_to blog_path(@blog), method: 'delete', data: {confirm: "Are you sure?"} do %>
+                <p class="p-0 m-0 text-danger"><small>Delete</small></p>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+
+      </div>
       <p class="pt-3 time-ago-show"><small>Published <%= time_ago_in_words(@blog.created_at) %> ago</small></p>
       <h1 class="text-light py-3"><%= @blog.title %></h1>
         <div class="w-100">
@@ -12,26 +28,40 @@
       </div>
     </div>
 
-
        <%# right side %>
     <div class="col-sm-12 col-md-4">
-    <div class="sticky-col mt-4">
-    <h4 class="border-index pb-2 pt-3 "><span class="text-light"><small>RECENT POST</small></span></h4>
-      <% @latest_blogs.each do |blog| %>
-        <div class="my-5 align-items-center">
-          <div class="post-details pl-3">
-            <div class="text-color-small d-flex mt-sm-3">
-              <p class="py-0 m-0 pr-1"><small><strong><%= blog.subject.upcase %></strong></small></p>
-              <p class="p-0 m-0"><small><%= time_ago_in_words(blog.created_at) %> ago</small></p>
+      <div class="sticky-col mt-4">
+      <h4 class="border-index pb-2 pt-3 "><span class="text-light"><small>RECENT POST</small></span></h4>
+        <% @latest_blogs.each do |blog| %>
+          <div class="my-5 align-items-center">
+            <div class="post-details pl-3">
+              <div class="text-color-small d-flex mt-sm-3">
+                <p class="py-0 m-0 pr-1"><small><strong><%= blog.subject.upcase %></strong></small></p>
+                <p class="p-0 m-0"><small><%= time_ago_in_words(blog.created_at) %> ago</small></p>
+              </div>
+              <%= link_to blog_path(blog) do  %>
+                <h5><strong><%= blog.title %></strong></h5>
+              <% end %>
+              <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog) %></p>
             </div>
-            <%= link_to blog_path(blog) do  %>
-              <h5><strong><%= blog.title %></strong></h5>
-            <% end %>
-            <p class="body-index-card"><%= truncate(blog.body, length: 120) %><%= link_to 'Read more', blog_path(blog) %></p>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+  </div>
+</div>
+
+
+<%# EDIT MODAL  %>
+<div class="modal fade" id="editArticleModal" tabindex="-1" role="dialog" aria-labelledby="editArticleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-style bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editArticleModalLabel">Create new article</h5>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
     </div>
   </div>
 </div>
