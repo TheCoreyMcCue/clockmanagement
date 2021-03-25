@@ -20,9 +20,9 @@
                 <i class="fas fa-search"></i>
                 <% end %>
               </div>
-              <div class="btn-box-index d-flex justify-content-center">
-               <%= link_to "Add Article", new_blog_path, remote: true, class: 'btn btn-danger btn-sm' %>
-              </div>
+                <div class="btn-box-index d-flex justify-content-center">
+                 <%= link_to "Add Article", new_blog_path, class: 'btn btn-danger btn-sm' %>
+                </div>
             </div>
         <% end %>
       </div>
@@ -47,7 +47,7 @@
     <%# right side %>
     <div class="col-sm-12 col-md-4">
     <div class="sticky-col mt-4">
-    <h4 class="border-index pb-2 pt-3 "><span class="text-light"><small>RECENT POST</small></span></h4>
+    <h4 class="border-index pb-2 pt-3 "><span class="text-light"><small>RECENT POSTS</small></span></h4>
       <% @latest_blogs.each do |blog| %>
         <div class="my-5 align-items-center">
           <div class="post-details pl-3">
