@@ -264,7 +264,6 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap (>= 1.4.4)
   bootstrap
-  bundler (~> 2.2.14)
   byebug
   capybara (>= 3.26)
   cloudinary (~> 1.16.0)

@@ -5,7 +5,7 @@
         <p class="bg-danger text-light d-inline border-rounded px-2 my-2"><small><strong><%= @blog.subject.upcase %></strong></small></p>
 
         <% if user_signed_in? %>
-          <% if current_user.admin %>
+          <% if current_user.admin || current_user.blogger %>
             <div class="d-flex mr-3 edit-delete-article">
               <%= link_to edit_blog_path(@blog), remote: true do %>
                 <p class="p-0 m-0 text-danger mr-2"><small>Edit</small></p>
