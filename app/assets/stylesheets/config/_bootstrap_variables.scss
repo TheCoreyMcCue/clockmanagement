@@ -2,13 +2,6 @@
 // 1. All Bootstrap variables are here => https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
 // 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
 // 3. You can override them below!
-
-// General style
-$font-family-sans-serif:  $body-font;
-$headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
-$font-size-base: 1rem;
-
 // Colors
 $body-color: $gray;
 $primary:    $blue;
@@ -17,15 +10,19 @@ $warning:    $orange;
 
 //our palette
 $info:       #d3d3d3;
-//$danger:     #a4161a;
 $danger:     #e5383b;
 $dark: #161a1d;
-
 $black: #0b090a;
 $dark-red: #660708;
 $red: #ba181b;
 $pink: #e5383b;
 $lightest-gray: #f5f3f4;
+
+// General style
+$font-family-sans-serif:  $body-font;
+$headings-font-family:    $headers-font;
+$body-bg:                 $dark;
+$font-size-base: 1rem;
 
 // Buttons & inputs' radius
 $border-radius:    2px;
