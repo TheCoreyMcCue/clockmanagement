@@ -26,6 +26,9 @@
           <a class="nav-link active text-danger" aria-current="page" href="/pages/about">ABOUT</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active text-danger" aria-current="page" href="/pages/pace">P.A.C.E</a>
+        </li>
+        <li class="nav-item">
           <% if user_signed_in? %>
             <%= link_to "LOG OUT", destroy_user_session_path, :method => :delete, class: 'nav-link text-danger' %>
           <% end %>
