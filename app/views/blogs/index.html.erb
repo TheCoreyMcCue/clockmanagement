@@ -23,7 +23,7 @@
               <% if user_signed_in? %>
                 <% if current_user.admin || current_user.blogger %>
                   <div class="btn-box-index d-flex justify-content-center">
-                   <%= link_to "Add Article", new_blog_path, class: 'btn btn-danger btn-sm' %>
+                   <%= link_to "Add Article", new_blog_path, remote: true, class: 'btn btn-danger btn-sm' %>
                   </div>
                 <% end %>
               <% end %>
