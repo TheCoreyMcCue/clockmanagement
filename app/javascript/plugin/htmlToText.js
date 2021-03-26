@@ -1,5 +1,5 @@
 const htmlToText = () => {
-  // const container = document.querySelector('#ranking-container');
+  // const container = document.querySelector('.ranking-container');
 
   // if (container) {
   //   const data = container.dataset.ranking;
