@@ -1,12 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-3 col-md-9">
+<div class="container video-container">
     <h1 class="text-dark">PLUG'S INTERVIEWS</h1>
     <iframe id="ytplayer" type="text/html"
       src="https://www.youtube.com/embed?listType=playlist&list=PLbYTyHsuIhBQbOD6KDnlVPHQhJm8f9N9g"
       frameborder="0"></iframe>
-      </div>
-  </div>
 </div>
 
 <script>
@@ -21,8 +17,8 @@
   var player;
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('ytplayer', {
-      height: '360',
-      width: '640',
+      // height: '360',
+      // width: '640',
       videoId: 'M7lc1UVf-VE'
     });
   }
