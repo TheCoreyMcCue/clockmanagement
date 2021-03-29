@@ -1,0 +1,2 @@
+class YoutubeSessionsController < ApplicationController
+end
