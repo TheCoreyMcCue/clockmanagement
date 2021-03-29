@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "pages/podcast" => "pages#podcast"
   get "pages/about" => "pages#about"
   get "pages/pace" => "pages#pace"
+  get "/youtube_sessions" => "youtube_sessions#new"
+  get "/youtube_sessions/callback" => "youtube_sessions#callback"
 
   # get "pages/rankings" => "pages#rankings"
   resources :rankings
