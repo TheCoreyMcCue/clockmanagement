@@ -1,0 +1,2 @@
+class YoutubeSession < ApplicationRecord
+end
