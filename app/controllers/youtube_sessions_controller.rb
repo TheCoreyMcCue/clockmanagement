@@ -1,7 +1,12 @@
-class YoutubeSessionsController < ApplicationController
+require 'google/api_client/client_secrets'
 
+class YoutubeSessionsController < ApplicationController
+skip_after_action :verify_authorized
+skip_before_action :authenticate_user!, only: %i[new callback auth_client redirect_uri]
   def new
-    redirect to auth_client.authorization_uri.to_s
+    @youtube_session = YoutubeSession.new
+    authorize(@youtube_session)
+    redirect_to auth_client.authorization_uri.to_s
   end
 
   def callback
