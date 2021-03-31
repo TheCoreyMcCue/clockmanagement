@@ -5,29 +5,29 @@ class RankingPolicy < ApplicationPolicy
     end
   end
 
-  # def destroy?
-  #   user && user.admin?
-  # end
+  def destroy?
+    user && user.admin?
+  end
 
   def index?
     true
   end
 
-  # def update?
-  #   true
-  # end
+  def update?
+    true
+  end
 
-  # def edit?
-  #   true
-  # end
+  def edit?
+    true
+  end
 
-  # def new?
-  #   true
-  # end
+  def new?
+    true
+  end
 
-  # def create?
-  #   user.admin? || user.blogger?
-  # end
+  def create?
+    user.admin?
+  end
 
   # def show?
   #   true
