@@ -1,0 +1,13 @@
+placeholder code
+
+    <%# if user_signed_in? %>
+        <%# if current_user.admin || current_user.blogger %>
+          <%#= simple_form_for @ranking do |f| %>
+            <%#= f.label :weekly_data, "Publish here:"%>
+            <%#= f.input :weekly_data, as: :string, label: false, placeholder: "Update here weekly rankings" %>
+            <%#= f.submit "Publish" %>
+          <%# end %>
+      <%# end %>
+    <%# end %>
+
+ <%#= @ranking.weekly_data.try(:html_safe) %>
