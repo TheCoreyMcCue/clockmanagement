@@ -20,6 +20,8 @@ class BlogsController < ApplicationController
   def show
     authorize(@blog)
     @blog = Blog.find(params[:id])
+    # This will be used to implement metadata to the blogs
+    # set_meta_tag title: @blog.title
   end
 
   def new
