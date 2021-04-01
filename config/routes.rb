@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "pages/podcast" => "pages#podcast"
   get "pages/about" => "pages#about"
   get "pages/pace" => "pages#pace"
+  # get "pages/dashboard" => "pages#dashboard"
   get "/youtube_sessions" => "youtube_sessions#new"
   get "/youtube_sessions/callback" => "youtube_sessions#callback"
 

@@ -20,6 +20,11 @@ class PagesController < ApplicationController
     render template: "pages/pace"
   end
 
+  # def dashboard
+  #   render template: "pages/dashboard"
+  #   @user = User.all
+  # end
+
   # def rankings
   #   render template: "pages/rankings"
   # end
