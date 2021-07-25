@@ -111,6 +111,11 @@
   color: rgb(241, 238, 235);
 }
 .pace-photo {
-  height: 50vh;
-  width: 80vw;
+  height: 35vh;
+  width: 40vw;
+  margin: 3% 0 0 5%;
+}
+.pace-content {
+  display: flex;
+  align-items: center;
 }
